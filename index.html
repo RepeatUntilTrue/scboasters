@@ -94,6 +94,7 @@
     --white:#f3f1ea;
     --white-dim:#c9c7bf;
     --lime:#cdfb3f;
+    --court-red:#e91c11;
     --line:rgba(243,241,234,0.14);
   }
 
@@ -305,6 +306,11 @@
   .loc-visual{
     aspect-ratio:4/3;position:relative;overflow:hidden;background:#111;border:1px solid var(--line);
   }
+  .loc-logo{
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+    width:220px;max-width:52%;height:auto;z-index:2;
+    filter:drop-shadow(0 4px 18px rgba(0,0,0,0.55));
+  }
   .location h2{font-size:clamp(2rem,4.5vw,3.2rem);text-transform:uppercase;margin-bottom:22px;}
   .loc-addr{font-size:1.1rem;line-height:1.6;margin-bottom:10px;}
   .loc-addr strong{display:block;font-family:'Space Grotesk',sans-serif;font-size:1.3rem;margin-bottom:6px;}
@@ -319,6 +325,30 @@
   .team h2{font-size:clamp(2.4rem,5.5vw,4.4rem);text-transform:uppercase;}
   .team h2 .lime{color:var(--lime);}
   .team-head p{color:var(--white-dim);margin-top:18px;font-size:1rem;line-height:1.6;}
+  .tournaments{max-width:760px;margin-bottom:56px;padding-top:34px;border-top:1px solid var(--line);}
+  .tournaments h3{font-family:'Space Grotesk',sans-serif;font-size:1.05rem;text-transform:uppercase;letter-spacing:0.03em;margin-bottom:14px;color:var(--lime);}
+  .tournaments p{color:var(--white-dim);font-size:0.98rem;line-height:1.65;max-width:660px;}
+  .tournaments ul.levels{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;list-style:none;padding:0;}
+  .tournaments ul.levels li{border:1px solid var(--line);padding:8px 16px;border-radius:100px;font-size:0.83rem;color:var(--lime);}
+  .trophy-toggle{
+    margin-top:26px;display:inline-flex;align-items:center;gap:12px;background:none;border:1px solid var(--line);
+    color:var(--white);font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.95rem;
+    padding:14px 22px;cursor:pointer;border-radius:2px;transition:border-color .2s ease;
+  }
+  .trophy-toggle:hover{border-color:var(--lime);}
+  .trophy-toggle .plus{color:var(--lime);font-size:1.2rem;line-height:1;transition:transform .25s ease;}
+  .trophy-toggle.open .plus{transform:rotate(45deg);}
+  .trophy-panel{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+  .trophy-panel.open{max-height:900px;}
+  .trophy-list{list-style:none;padding:0;margin-top:22px;border-top:1px solid var(--line);max-width:660px;}
+  .trophy-item{
+    display:flex;justify-content:space-between;align-items:baseline;gap:18px;flex-wrap:wrap;
+    padding:16px 4px;border-bottom:1px solid var(--line);
+  }
+  .trophy-title{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.98rem;}
+  .trophy-name{color:var(--white-dim);font-size:0.92rem;flex:1;min-width:140px;}
+  .trophy-year{color:var(--lime);font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.92rem;}
+  .trophy-note{color:var(--white-dim);font-size:0.8rem;margin-top:16px;font-style:italic;}
   .team-tag{
     display:inline-block;border:1px solid var(--lime);color:var(--lime);
     font-size:0.78rem;font-weight:700;padding:6px 14px;letter-spacing:0.05em;margin-bottom:20px;
@@ -329,7 +359,7 @@
     aspect-ratio:3/4;background:linear-gradient(160deg,#1c1c17,#0b0b0a 70%);
     position:relative;overflow:hidden;
   }
-  .player-photo svg{position:absolute;inset:0;width:100%;height:100%;opacity:0.9;}
+  .player-photo svg,.player-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.9;}
   .player-info{padding:16px 18px 22px;}
   .player-info .pname{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.05rem;text-transform:uppercase;}
   .player-info .prole{color:var(--white-dim);font-size:0.82rem;margin-top:2px;}
@@ -505,6 +535,7 @@
   </nav>
 </header>
 
+
 <div class="mobile-menu">
   <button class="mobile-close" onclick="document.querySelector('.mobile-menu').classList.remove('open')" aria-label="Close">
     <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg>
@@ -521,19 +552,19 @@
 <section class="hero" id="home">
   <div class="hero-diagonal"></div>
   <svg class="hero-court" viewBox="0 0 300 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="20" y="10" width="260" height="480" stroke="#cdfb3f" stroke-width="1.5"/>
-    <line x1="20" y1="190" x2="280" y2="190" stroke="#cdfb3f" stroke-width="1.5"/>
-    <line x1="150" y1="190" x2="150" y2="490" stroke="#cdfb3f" stroke-width="1.5"/>
-    <rect x="20" y="10" width="260" height="60" stroke="#cdfb3f" stroke-width="1.5"/>
+    <rect x="20" y="10" width="260" height="480" stroke="var(--court-red)" stroke-width="1.5"/>
+    <line x1="20" y1="190" x2="280" y2="190" stroke="var(--court-red)" stroke-width="1.5"/>
+    <line x1="150" y1="190" x2="150" y2="490" stroke="var(--court-red)" stroke-width="1.5"/>
+    <rect x="20" y="10" width="260" height="60" stroke="var(--court-red)" stroke-width="1.5"/>
     <use href="#figure-action" x="10" y="230" width="260" height="220" color="#cdfb3f"/>
   </svg>
   <div class="wrap hero-inner">
     <div class="eyebrow-tag" data-de="Squashclub · Bochum / Castrop-Rauxel" data-en="Squash Club · Bochum / Castrop-Rauxel">Squashclub · Bochum / Castrop-Rauxel</div>
-    <h1 data-de="SQUASH.<br>FAST.<br>LOUD.<br><em>TOGETHER.</em>" data-en="SQUASH.<br>FAST.<br>LOUD.<br><em>TOGETHER.</em>">SQUASH.<br>FAST.<br>LOUD.<br><em>TOGETHER.</em></h1>
-    <div class="hero-club">SC BOASTERS BOCHUM</div>
-    <p class="hero-sub" data-de="Ein kleiner, ambitionierter Verein für alle, die Squash so lieben wie wir: schnell, direkt und mit vollem Einsatz." data-en="A small, ambitious club for everyone who loves squash the way we do: fast, direct, and all-in.">Ein kleiner, ambitionierter Verein für alle, die Squash so lieben wie wir: schnell, direkt und mit vollem Einsatz.</p>
+    <h1 data-de="SQUASH.<br>FAST.<br>FUN.<br><em>TOGETHER.</em>" data-en="SQUASH.<br>FAST.<br>FUN.<br><em>TOGETHER.</em>">SQUASH.<br>FAST.<br>FUN.<br><em>TOGETHER.</em></h1>
+    <div class="hero-club">SC BOASTERS BOCHUM · 1996 - 2026</div>
+    <p class="hero-sub" data-de="Ein kleiner, traditionsreicher und ambitionierter Verein für alle, die Squash so lieben wie wir: schnell, direkt und mit vollem Einsatz." data-en="A small, established and ambitious club for everyone who loves squash the way we do: fast, direct, and all-in.">Ein kleiner, ambitionierter Verein für alle, die Squash so lieben wie wir: schnell, direkt und mit vollem Einsatz.</p>
     <div class="hero-ctas">
-      <a class="btn-primary" href="#contact" data-de="COME PLAY →" data-en="COME PLAY →">COME PLAY →</a>
+      <a class="btn-primary" href="#contact" data-de="COME & PLAY →" data-en="COME and PLAY →">COME PLAY →</a>
       <a class="btn-ghost" href="#training" data-de="TRAINING →" data-en="TRAINING →">TRAINING →</a>
     </div>
     <div class="hero-stats">
@@ -550,12 +581,14 @@
   <div class="wrap who-grid">
     <div>
       <h2 data-de="20 MENSCHEN.<br>1 COURT.<br><span class='accent'>1 PASSION.</span>" data-en="20 PEOPLE.<br>1 COURT.<br><span class='accent'>1 PASSION.</span>">20 MENSCHEN.<br>1 COURT.<br><span class="accent">1 PASSION.</span></h2>
-      <p class="who-text" data-de="Der SC Boasters Bochum ist kein großer Verein — und genau das macht uns aus. Wir sind eine kleine, eingeschworene Gruppe, die sich einmal wöchentlich auf dem Court trifft, hart trainiert und sich danach genauso ernst über ein Bier austauscht. Egal ob du seit Jahren spielst oder gerade erst anfängst: Bei uns findest du schnell Anschluss." data-en="SC Boasters Bochum isn't a big club — and that's exactly the point. We're a small, tight-knit group that meets once a week on the court, trains hard, and talks just as seriously about it over a beer afterwards. Whether you've played for years or you're just starting out, you'll find your place here fast.">Der SC Boasters Bochum ist kein großer Verein — und genau das macht uns aus. Wir sind eine kleine, eingeschworene Gruppe, die sich einmal wöchentlich auf dem Court trifft, hart trainiert und sich danach genauso ernst über ein Bier austauscht. Egal ob du seit Jahren spielst oder gerade erst anfängst: Bei uns findest du schnell Anschluss.</p>
+      <p class="who-text" data-de="Der SC Boasters Bochum ist kein großer Verein — und genau das macht uns aus. Wir sind eine kleine, eingeschworene Gruppe, die sich ein- bis zweimmal wöchentlich auf dem Court trifft, hart spielt oder trainiert und sich danach genauso gerne über ein Bier austauscht. Egal ob du seit Jahren spielst oder gerade erst anfängst: Bei uns findest du schnell Anschluss." data-en="SC Boasters Bochum isn't a big club — and that's exactly the point. We're a small, tight-knit group that meets once a week on the court, trains hard, and talks just as seriously about it over a beer afterwards. Whether you've played for years or you're just starting out, you'll find your place here fast.">Der SC Boasters Bochum ist kein großer Verein — und genau das macht uns aus. Wir sind eine kleine, eingeschworene Gruppe, die sich einmal wöchentlich auf dem Court trifft, hart trainiert und sich danach genauso ernst über ein Bier austauscht. Egal ob du seit Jahren spielst oder gerade erst anfängst: Bei uns findest du schnell Anschluss.</p>
     </div>
     <div class="fact-list">
       <div class="fact"><strong>20+</strong><span data-de="Mitglieder" data-en="Members">Mitglieder</span></div>
-      <div class="fact"><strong>1×</strong><span data-de="Training pro Woche" data-en="Weekly training">Training pro Woche</span></div>
-      <div class="fact"><strong>REGIONALLIGA</strong><span data-de="Herrenmannschaft" data-en="Senior team">Herrenmannschaft</span></div>
+      <div class="fact"><strong>3-6</strong><span data-de="Courts" data-en="Courts">Courts</span></div>
+      <div class="fact"><strong>1-2×</strong><span data-de="Training pro Woche" data-en="Weekly training">Training pro Woche</span></div>
+      <div class="fact"><strong>1</strong><span data-de="Seniorenmannschaft" data-en="Senior team">Seniorenmannschaft</span></div>
+      <div class="fact"><strong>1</strong><span data-de="Herrenmannschaft (aktuell nicht besetzt)" data-en="Mens team">Herrenmannschaft (aktuell nicht besetzt)</span></div>
     </div>
   </div>
 </section>
@@ -616,7 +649,7 @@
       <span data-de="SPIELER" data-en="PLAYER">SPIELER</span>
     </div>
     <div class="tile t3">
-      <svg viewBox="0 0 300 100"><rect x="0" y="0" width="300" height="100" fill="none" stroke="#cdfb3f" stroke-width="1" opacity="0.3"/><line x1="150" y1="0" x2="150" y2="100" stroke="#cdfb3f" stroke-width="1" opacity="0.3"/></svg>
+      <svg viewBox="0 0 300 100"><rect x="0" y="0" width="300" height="100" fill="none" stroke="var(--court-red)" stroke-width="1" opacity="0.6"/><line x1="150" y1="0" x2="150" y2="100" stroke="var(--court-red)" stroke-width="1" opacity="0.6"/></svg>
       <span data-de="COURT" data-en="COURT">COURT</span>
     </div>
     <div class="tile t4">
@@ -677,11 +710,12 @@
     <div class="loc-visual">
       <svg viewBox="0 0 400 300" width="100%" height="100%">
         <rect width="400" height="300" fill="#111"/>
-        <rect x="40" y="20" width="320" height="260" fill="none" stroke="#cdfb3f" stroke-width="1.5" opacity="0.6"/>
-        <line x1="40" y1="150" x2="360" y2="150" stroke="#cdfb3f" stroke-width="1" opacity="0.4"/>
-        <line x1="200" y1="150" x2="200" y2="280" stroke="#cdfb3f" stroke-width="1" opacity="0.4"/>
+        <rect x="40" y="20" width="320" height="260" fill="none" stroke="var(--court-red)" stroke-width="1.5" opacity="0.85"/>
+        <line x1="40" y1="150" x2="360" y2="150" stroke="var(--court-red)" stroke-width="1" opacity="0.7"/>
+        <line x1="200" y1="150" x2="200" y2="280" stroke="var(--court-red)" stroke-width="1" opacity="0.7"/>
         <circle cx="200" cy="90" r="6" fill="#cdfb3f"/>
       </svg>
+      <img class="loc-logo" src="media/sportforumlogo_white.png" alt="Sportforum Castrop-Rauxel logo">
     </div>
     <div>
       <h2 data-de="UNSER HOME COURT" data-en="OUR HOME COURT">UNSER HOME COURT</h2>
@@ -704,24 +738,70 @@
     <div class="team-head">
       <span class="team-tag" data-de="REGIONALLIGA" data-en="REGIONALLIGA">REGIONALLIGA</span>
       <h2 data-de="WIR SPIELEN NICHT NUR.<br><span class='lime'>WIR KÄMPFEN.</span>" data-en="WE DON'T JUST PLAY.<br><span class='lime'>WE COMPETE.</span>">WIR SPIELEN NICHT NUR.<br><span class="lime">WIR KÄMPFEN.</span></h2>
-      <p data-de="Unsere Herrenmannschaft tritt in der Regionalliga an — hart erkämpft, Woche für Woche." data-en="Our senior team competes in the Regionalliga — hard-fought, week after week.">Unsere Herrenmannschaft tritt in der Regionalliga an — hart erkämpft, Woche für Woche.</p>
+      <p data-de="Unsere Seniorenmannschaft tritt in der NRW Regionalliga an — hart erkämpft, Spiel um Spiel" data-en="Our senior team competes in the NRW Regionalliga — hard-fought, match by match.">Unsere Seniorenmannschaft tritt in der NRW Regionalliga an — hart erkämpft, Spiel um Spiel.</p>
     </div>
+
+    <div class="tournaments">
+      <span class="team-tag" data-de="Turniere" data-en="Tournaments">Turniere</span>
+      <p data-de="Neben der Regionalliga nehmen unsere Mitglieder auch aktiv an nationalen und internationalen Turnieren teil. Im Master-Bereich (Altersklassen) sind wir bei NRW-Meisterschaften, Deutschen Meisterschaften, Europameisterschaften und sogar bei Weltmeisterschaften vertreten." data-en="Beyond the Regionalliga, our members also actively compete in national and international tournaments. In the Masters categories (age groups), we take part in NRW Championships, German Championships, European Championships and World Championships.">Neben der Regionalliga nehmen unsere Mitglieder auch aktiv an nationalen und internationalen Turnieren teil. Im Master-Bereich (Altersklassen) sind wir bei NRW-Meisterschaften, Deutschen Meisterschaften, Europameisterschaften und Weltmeisterschaften vertreten.</p>
+      <ul class="levels">
+        <li data-de="NRW-Meisterschaften" data-en="NRW Championships">NRW-Meisterschaften</li>
+        <li data-de="Deutsche Meisterschaften" data-en="German Championships">Deutsche Meisterschaften</li>
+        <li data-de="Europameisterschaften" data-en="European Championships">Europameisterschaften</li>
+        <li data-de="Weltmeisterschaften" data-en="World Championships">Weltmeisterschaften</li>
+      </ul>
+
+      <button class="trophy-toggle" onclick="toggleTrophies(this)">
+        <span data-de="UNSERE TURNIERERFOLGE" data-en="OUR TOURNAMENT RESULTS">UNSERE TURNIERERFOLGE</span>
+        <span class="plus">+</span>
+      </button>
+      <div class="trophy-panel">
+        <ul class="trophy-list">
+          <li class="trophy-item">
+            <span class="trophy-title" data-de="Deutscher Meister Ü45" data-en="German Champion 45+">Deutscher Meister Ü45</span>
+            <span class="trophy-name">Christian Adamek</span>
+            <span class="trophy-year">2022</span>
+          </li>
+          <li class="trophy-item">
+            <span class="trophy-title" data-de="1. Platz Duisburger Saison Opening Herren A" data-en="1st Place NRW League">1. Platz Duisburger Saison Opening Herren A</span>
+            <span class="trophy-name">Markus Kukuk</span>
+            <span class="trophy-year">2021</span>
+          </li>
+          <li class="trophy-item">
+            <span class="trophy-title" data-de="1. Platz NRW-Rangliste Herren D" data-en="1st Place NRW League">1. Platz NRW-Rangliste Herren D</span>
+            <span class="trophy-name">Markus Kukuk</span>
+            <span class="trophy-year">2022/23</span>
+          </li>
+          <li class="trophy-item">
+            <span class="trophy-title" data-de="3. Platz NRW Masters Meisterschaft Ü55" data-en="3rd Place NRW Masters Championship 55+">3. Platz NRW Masters Meisterschaft Ü55</span>
+            <span class="trophy-name">Markus Kukuk</span>
+            <span class="trophy-year">2024/25 und 2025/26</span>
+          </li>
+          <li class="trophy-item">
+            <span class="trophy-title" data-de="44. Platz Senioren Weltmeisterschaft Breslau, Polen Ü50" data-en="44th Place Senior World Championship Breslau, Poland 50+">44. Platz Senioren Weltmeisterschaft Breslau, Polen Ü50</span>
+            <span class="trophy-name">Markus Kukuk</span>
+            <span class="trophy-year">2022</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
     <div class="player-grid">
       <div class="player">
-        <div class="player-photo"><svg viewBox="0 0 200 220" preserveAspectRatio="xMidYMax slice"><use href="#figure-bust" x="0" y="0" width="200" height="220" color="#cdfb3f"/></svg></div>
-        <div class="player-info"><div class="pname">Jonas M.</div><div class="prole" data-de="Position 1" data-en="Position 1">Position 1</div></div>
+        <div class="player-photo"><img src="media/Markus.png" alt="Markus"></div>
+        <div class="player-info"><div class="pname">Markus Kukuk (links)</div><div class="prole" data-de="1. Platz A-Feld Duisburger Saison Opening, 2021" data-en="Position 1">Position 1</div></div>
       </div>
       <div class="player">
         <div class="player-photo"><svg viewBox="0 0 200 220" preserveAspectRatio="xMidYMax slice"><use href="#figure-bust" x="0" y="0" width="200" height="220" color="#cdfb3f"/></svg></div>
-        <div class="player-info"><div class="pname">Lukas B.</div><div class="prole" data-de="Position 2" data-en="Position 2">Position 2</div></div>
+        <div class="player-info"><div class="pname">C. A.</div><div class="prole" data-de="Position 1" data-en="Position 1">Position 1</div></div>
       </div>
       <div class="player">
         <div class="player-photo"><svg viewBox="0 0 200 220" preserveAspectRatio="xMidYMax slice"><use href="#figure-bust" x="0" y="0" width="200" height="220" color="#cdfb3f"/></svg></div>
-        <div class="player-info"><div class="pname">Finn K.</div><div class="prole" data-de="Position 3" data-en="Position 3">Position 3</div></div>
+        <div class="player-info"><div class="pname">M. K.</div><div class="prole" data-de="Position 1" data-en="Position 1">Position 1</div></div>
       </div>
       <div class="player">
         <div class="player-photo"><svg viewBox="0 0 200 220" preserveAspectRatio="xMidYMax slice"><use href="#figure-bust" x="0" y="0" width="200" height="220" color="#cdfb3f"/></svg></div>
-        <div class="player-info"><div class="pname">Tim W.</div><div class="prole" data-de="Position 4" data-en="Position 4">Position 4</div></div>
+        <div class="player-info"><div class="pname">A. D.</div><div class="prole" data-de="Position 1" data-en="Position 4">Position 1</div></div>
       </div>
     </div>
   </div>
@@ -868,7 +948,7 @@
 <!-- ================= JOIN CTA ================= -->
 <section class="join-cta" id="contact">
   <div class="wrap">
-    <h2 data-de="BEREIT<br><span class='lime'>ANZUSCHLAGEN?</span>" data-en="READY TO<br><span class='lime'>SWING?</span>">BEREIT<br><span class="lime">ANZUSCHLAGEN?</span></h2>
+    <h2 data-de="BEREIT<br><span class='lime'>AUFZUSCHLAGEN?</span>" data-en="READY TO<br><span class='lime'>HIT?</span>">BEREIT<br><span class="lime">AUFZUSCHLAGEN?</span></h2>
     <p data-de="Schreib uns oder komm einfach mittwochs vorbei — wir freuen uns auf dich." data-en="Message us or just show up on a Wednesday — we'd love to have you.">Schreib uns oder komm einfach mittwochs vorbei — wir freuen uns auf dich.</p>
     <a class="btn-primary" href="mailto:info@scboasters-bochum.de" data-de="KONTAKT AUFNEHMEN →" data-en="GET IN TOUCH →">KONTAKT AUFNEHMEN →</a>
   </div>
@@ -925,6 +1005,11 @@
     const wasOpen = item.classList.contains('open');
     document.querySelectorAll('.faq-item.open').forEach(i=> i.classList.remove('open'));
     if(!wasOpen) item.classList.add('open');
+  }
+
+  function toggleTrophies(btn){
+    btn.classList.toggle('open');
+    btn.nextElementSibling.classList.toggle('open');
   }
 
   function setLang(lang){
