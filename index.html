@@ -131,12 +131,33 @@
     display:flex;align-items:center;justify-content:space-between;
     padding:18px 32px;max-width:1240px;margin:0 auto;
   }
+  .brand-wrap{display:flex;align-items:center;gap:12px;}
+  .brand-mark, .hero-logo, .footer-logo{
+    display:block;object-fit:cover;border-radius:10px;
+    border:1px solid rgba(255,255,255,0.18);
+    box-shadow:0 10px 32px rgba(0,0,0,0.22);
+    background:rgba(255,255,255,0.03);
+  }
+  .brand-mark{
+    width:34px;height:34px;
+  }
   .brand{
     font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.05rem;
     letter-spacing:0.01em;
   }
   .brand span{color:var(--lime);}
   .nav-links{display:flex;gap:34px;font-size:0.95rem;font-weight:500;}
+  .hero-logo-wrap{
+    display:inline-flex;align-items:center;gap:12px;
+    padding:10px 14px 10px 10px;background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.08);border-radius:999px;
+    margin-bottom:18px;
+  }
+  .hero-logo{width:42px;height:42px;}
+  .hero-logo-wrap span{
+    font-size:0.78rem;letter-spacing:0.14em;text-transform:uppercase;
+    color:var(--white-dim);font-weight:700;
+  }
   .nav-links a{position:relative;padding:4px 0;color:var(--white-dim);transition:color .2s;}
   .nav-links a:hover, .nav-links a.active{color:var(--white);}
   .nav-links a::after{
@@ -513,7 +534,10 @@
 
 <header>
   <nav class="nav">
-    <div class="brand">SC <span>BOASTERS</span> BOCHUM</div>
+    <div class="brand-wrap">
+      <img class="brand-mark" src="media/LogoShirt.png" alt="SC Boasters Bochum club logo">
+      <div class="brand">SC <span>BOASTERS</span> BOCHUM</div>
+    </div>
     <div class="nav-links">
       <a href="#home" data-de="Home" data-en="Home">Home</a>
       <a href="#squash" data-de="Squash" data-en="Squash">Squash</a>
@@ -560,10 +584,10 @@
     <use href="#figure-action" x="10" y="230" width="260" height="220" color="#cdfb3f"/>
   </svg>
   <div class="wrap hero-inner">
-    <div class="eyebrow-tag" data-de="Squashclub · Bochum / Castrop-Rauxel" data-en="Squash Club · Bochum / Castrop-Rauxel">Squashclub · Bochum / Castrop-Rauxel</div>
+    <div class="eyebrow-tag" data-de="Squashverein · Bochum / Castrop-Rauxel" data-en="Squash Club · Bochum / Castrop-Rauxel">Squashverein · Bochum / Castrop-Rauxel</div>
     <h1 data-de="SQUASH.<br>FAST.<br>FUN.<br><em>TOGETHER.</em>" data-en="SQUASH.<br>FAST.<br>FUN.<br><em>TOGETHER.</em>">SQUASH.<br>FAST.<br>FUN.<br><em>TOGETHER.</em></h1>
-    <div class="hero-club">SC BOASTERS BOCHUM · 1996 - 2026</div>
-    <p class="hero-sub" data-de="Ein kleiner, traditionsreicher und ambitionierter Verein für alle, die Squash so lieben wie wir: schnell, direkt und mit vollem Einsatz." data-en="A small, established and ambitious club for everyone who loves squash the way we do: fast, direct, and all-in.">Ein kleiner, ambitionierter Verein für alle, die Squash so lieben wie wir: schnell, direkt und mit vollem Einsatz.</p>
+    <div class="hero-club">SC BOASTERS BOCHUM · 35 Jahre · 1991 - 2026</div>
+    <p class="hero-sub" data-de="Ein traditionsreicher und ambitionierter Verein für alle, die Squash so lieben wie wir: schnell, direkt und mit vollem Einsatz." data-en="A small, established and ambitious club for everyone who loves squash the way we do: fast, direct, and all-in.">Ein kleiner, ambitionierter Verein für alle, die Squash so lieben wie wir: schnell, direkt und mit vollem Einsatz.</p>
     <div class="hero-ctas">
       <a class="btn-primary" href="#contact" data-de="COME & PLAY →" data-en="COME and PLAY →">COME PLAY →</a>
       <a class="btn-ghost" href="#training" data-de="TRAINING →" data-en="TRAINING →">TRAINING →</a>
@@ -582,7 +606,7 @@
   <div class="wrap who-grid">
     <div>
       <h2 data-de="20 MENSCHEN.<br>1 SPORT.<br><span class='accent'>1 PASSION.</span>" data-en="20 PEOPLE.<br>1 SPORT.<br><span class='accent'>1 PASSION.</span>">20 MENSCHEN.<br>1 COURT.<br><span class="accent">1 PASSION.</span></h2>
-      <p class="who-text" data-de="Der SC Boasters Bochum ist kein großer Verein — und genau das macht uns aus. Wir sind eine kleine, eingeschworene Gruppe, die sich ein- bis zweimmal wöchentlich auf dem Court trifft, hart spielt oder trainiert und sich danach genauso gerne über ein Bier austauscht. Egal ob du seit Jahren spielst oder gerade erst anfängst: Bei uns findest du schnell Anschluss." data-en="SC Boasters Bochum isn't a big club — and that's exactly the point. We're a small, tight-knit group that meets once a week on the court, trains hard, and talks just as seriously about it over a beer afterwards. Whether you've played for years or you're just starting out, you'll find your place here fast.">Der SC Boasters Bochum ist kein großer Verein — und genau das macht uns aus. Wir sind eine kleine, eingeschworene Gruppe, die sich einmal wöchentlich auf dem Court trifft, hart trainiert und sich danach genauso ernst über ein Bier austauscht. Egal ob du seit Jahren spielst oder gerade erst anfängst: Bei uns findest du schnell Anschluss.</p>
+      <p class="who-text" data-de="Der SC Boasters Bochum ist kein großer Verein — und genau das macht uns aus. Wir sind eine eingeschworene Gruppe, die sich ein- bis zweimmal wöchentlich auf dem Court trifft, hart spielt oder trainiert und sich danach genauso gerne über ein Bier austauscht. Egal ob du seit Jahren spielst oder gerade erst anfängst: Bei uns findest du schnell Anschluss." data-en="SC Boasters Bochum isn't a big club — and that's exactly the point. We're a small, tight-knit group that meets once a week on the court, trains hard, and talks just as seriously about it over a beer afterwards. Whether you've played for years or you're just starting out, you'll find your place here fast.">Der SC Boasters Bochum ist kein großer Verein — und genau das macht uns aus. Wir sind eine kleine, eingeschworene Gruppe, die sich einmal wöchentlich auf dem Court trifft, hart trainiert und sich danach genauso ernst über ein Bier austauscht. Egal ob du seit Jahren spielst oder gerade erst anfängst: Bei uns findest du schnell Anschluss.</p>
     </div>
     <div class="fact-list">
       <div class="fact"><strong>20+</strong><span data-de="Mitglieder" data-en="Members">Mitglieder</span></div>
@@ -779,7 +803,7 @@
             <span class="trophy-year">2022/23</span>
           </li>
           <li class="trophy-item">
-            <span class="trophy-title" data-de="3. Platz NRW Masters Meisterschaft Ü55" data-en="3rd Place NRW Masters Championship 55+">3. Platz NRW Masters Meisterschaft Ü55</span>
+            <span class="trophy-title" data-de="3. Platz NRW Meisterschaft Ü55" data-en="3rd Place NRW Championship 55+">3. Platz NRW Meisterschaft Ü55</span>
             <span class="trophy-name">Markus Kukuk</span>
             <span class="trophy-year">2024/25 und 2025/26</span>
           </li>
@@ -789,7 +813,7 @@
             <span class="trophy-year">2025</span>
           </li>
           <li class="trophy-item">
-            <span class="trophy-title" data-de="44. Platz Senioren Weltmeisterschaft Breslau, Polen Ü50" data-en="44th Place Senior World Championship Breslau, Poland 50+">44. Platz Senioren Weltmeisterschaft Breslau, Polen Ü50</span>
+            <span class="trophy-title" data-de="44. Platz Weltmeisterschaft Breslau, Polen Ü50" data-en="44th Place World Championship Breslau, Poland 50+">44. Platz Weltmeisterschaft Breslau, Polen Ü50</span>
             <span class="trophy-name">Markus Kukuk</span>
             <span class="trophy-year">2022</span>
           </li>
@@ -800,19 +824,19 @@
     <div class="player-grid">
       <div class="player">
         <div class="player-photo"><img src="media/Markus.png" alt="Markus"></div>
-        <div class="player-info"><div class="pname">Markus Kukuk (links)</div><div class="prole" data-de="1. Platz A-Feld Duisburger Saison Opening, 2021" data-en="Position 1">Position 1</div></div>
+        <div class="player-info"><div class="pname">Markus Kukuk (links)</div><div class="prole" data-de="1. Platz A-Feld Duisburger Saison Opening (2021)" data-en="First Place A-Draw Duisburger Season Opening (2021)">First Place A-Feld Duisburger Season Opening (2021)</div></div>
       </div>
       <div class="player">
-        <div class="player-photo"><svg viewBox="0 0 200 220" preserveAspectRatio="xMidYMax slice"><use href="#figure-bust" x="0" y="0" width="200" height="220" color="#cdfb3f"/></svg></div>
-        <div class="player-info"><div class="pname">C. A.</div><div class="prole" data-de="Position 1" data-en="Position 1">Position 1</div></div>
+        <div class="player-photo"><img src="media/Christian.png" alt="Christian"></div>
+        <div class="player-info"><div class="pname">Christian Adamek (links)</div><div class="prole" data-de="Senioren Weltmeisterschaft, Polen (2022)" data-en="Senior World Championship">Senioren Weltmeisterschaft</div></div>
       </div>
       <div class="player">
-        <div class="player-photo"><svg viewBox="0 0 200 220" preserveAspectRatio="xMidYMax slice"><use href="#figure-bust" x="0" y="0" width="200" height="220" color="#cdfb3f"/></svg></div>
-        <div class="player-info"><div class="pname">M. K.</div><div class="prole" data-de="Position 1" data-en="Position 1">Position 1</div></div>
+        <div class="player-photo"><img src="media/Daniel.png" alt="Daniel"></div>
+        <div class="player-info"><div class="pname">Daniel Ballnus (rechts)</div><div class="prole" data-de="Senioren Weltmeisterschaft, Polen (2022)" data-en="Senior World Championship">Senioren Weltmeisterschaft</div></div>
       </div>
       <div class="player">
-        <div class="player-photo"><svg viewBox="0 0 200 220" preserveAspectRatio="xMidYMax slice"><use href="#figure-bust" x="0" y="0" width="200" height="220" color="#cdfb3f"/></svg></div>
-        <div class="player-info"><div class="pname">A. D.</div><div class="prole" data-de="Position 1" data-en="Position 4">Position 1</div></div>
+        <div class="player-photo"><img src="media/MichaelP.jpg" alt="Michael P."></div>
+        <div class="player-info"><div class="pname">Michael Peldzsus (rechts) </div><div class="prole" data-de="Senioren Weltmeisterschaft, Polen (2022)" data-en="Senior World Championship">Senioren Weltmeisterschaft</div></div>
       </div>
     </div>
   </div>
@@ -969,7 +993,10 @@
   <div class="wrap">
     <div class="footer-grid">
       <div>
-        <div class="footer-brand">SC <span>BOASTERS</span> BOCHUM</div>
+        <div class="footer-brand-wrap">
+          <img class="footer-logo" src="media/LogoShirt.png" alt="SC Boasters Bochum club logo">
+          <div class="footer-brand">SC <span>BOASTERS</span> BOCHUM</div>
+        </div>
         <p style="margin-top:10px;max-width:260px;" data-de="Squashverein aus Bochum, trainierend im Sportforum Castrop-Rauxel." data-en="Squash club from Bochum, training at the Sportforum Castrop-Rauxel.">Squashverein aus Bochum, trainierend im Sportforum Castrop-Rauxel.</p>
       </div>
       <div class="footer-cols">
