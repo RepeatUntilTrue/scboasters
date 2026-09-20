@@ -6,10 +6,10 @@
 <title>SC Boasters Bochum | Squashverein im Ruhrgebiet — Training in Castrop-Rauxel</title>
 <meta name="description" content="SC Boasters Bochum: Squashverein mit Regionalliga-Team, Training mittwochs 18 Uhr im Sportforum Castrop-Rauxel. Offen für Spieler aus Bochum, Dortmund, Essen, Unna und dem gesamten Ruhrgebiet.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://www.scboasters-bochum.de/">
-<link rel="alternate" hreflang="de" href="https://www.scboasters-bochum.de/">
-<link rel="alternate" hreflang="en" href="https://www.scboasters-bochum.de/en/">
-<link rel="alternate" hreflang="x-default" href="https://www.scboasters-bochum.de/">
+<link rel="canonical" href="https://www.squash-club-boasters.de/">
+<link rel="alternate" hreflang="de" href="https://www.squash-club-boasters.de/">
+<link rel="alternate" hreflang="en" href="https://www.squash-club-boasters.de/en/">
+<link rel="alternate" hreflang="x-default" href="https://www.squash-club-boasters.de/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SC Boasters Bochum">
 <meta property="og:title" content="SC Boasters Bochum — Squashverein im Ruhrgebiet">
@@ -23,7 +23,7 @@
   "@type": "SportsClub",
   "name": "SC Boasters Bochum",
   "sport": "Squash",
-  "url": "https://www.scboasters-bochum.de/",
+  "url": "https://www.squash-club-boasters.de/",
   "email": "info@scboasters-bochum.de",
   "address": {
     "@type": "PostalAddress",
@@ -394,13 +394,17 @@
   .community p{color:var(--white-dim);margin-top:22px;font-size:1.02rem;line-height:1.7;max-width:480px;}
   .chip-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px;}
   .chip{border:1px solid var(--line);padding:10px 16px;border-radius:100px;font-size:0.85rem;color:var(--white-dim);}
-  .community-visual{
-    display:grid;grid-template-columns:repeat(3,1fr);gap:2px;
+  .social-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .social-card{position:relative;aspect-ratio:1;overflow:hidden;background:#131310;}
+  .social-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(0.85) contrast(1.05);}
+  .social-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,10,0.05),rgba(11,11,10,0.72));}
+  .social-label{
+    position:absolute;left:14px;bottom:12px;z-index:1;
+    display:inline-flex;align-items:center;border:1px solid rgba(255,255,255,0.18);
+    background:rgba(11,11,10,0.36);backdrop-filter:blur(6px);
+    color:var(--white);font-size:0.72rem;letter-spacing:0.08em;font-weight:700;text-transform:uppercase;
+    padding:7px 10px;border-radius:100px;
   }
-  .community-visual div{
-    aspect-ratio:1;background:#131310;display:flex;align-items:center;justify-content:center;
-  }
-  .community-visual div svg{width:34%;color:var(--lime);opacity:0.7;}
 
   /* ---------- REGION / SEO ---------- */
   .region{padding:130px 0;border-bottom:1px solid var(--line);}
@@ -576,7 +580,7 @@
 <!-- ================= HERO ================= -->
 <section class="hero" id="home">
   <div class="hero-diagonal"></div>
-  <svg class="hero-court" viewBox="0 0 300 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg class="hero-court" viewBox="0 0 300 500" fill="none" xmlns="https://www.w3.org/2000/svg">
     <rect x="20" y="10" width="260" height="480" stroke="var(--court-red)" stroke-width="1.5"/>
     <line x1="20" y1="190" x2="280" y2="190" stroke="var(--court-red)" stroke-width="1.5"/>
     <line x1="150" y1="190" x2="150" y2="490" stroke="var(--court-red)" stroke-width="1.5"/>
@@ -867,13 +871,31 @@
         <span class="chip" data-de="Offen für alle Level" data-en="Open to all levels">Offen für alle Level</span>
       </div>
     </div>
-    <div class="community-visual">
-      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
-      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg></div>
-      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16v12H8l-4 4V4z"/></svg></div>
-      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2 3 7v6c0 5 4 8 9 9 5-1 9-4 9-9V7z"/></svg></div>
-      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg></div>
-      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21l6-6M21 3l-6 6M14 3l7 7-4 4-7-7z"/></svg></div>
+    <div class="social-grid">
+      <div class="social-card">
+        <img src="media/socialChristian.jpeg" alt="Christian Adamek">
+        <span class="social-label">Krabbelsack</span>
+      </div>
+      <div class="social-card">
+        <img src="media/socialWorldChampionships.jpeg" alt="Breslau, Poland World Championships">
+        <span class="social-label">Weltmeisterschaft</span>
+      </div>
+      <div class="social-card">
+        <img src="media/Daniel.png" alt="Daniel Ballnus">
+        <span class="social-label">Team</span>
+      </div>
+      <div class="social-card">
+        <img src="media/Markus2.jpeg" alt="SC Boasters team photo">
+        <span class="social-label">Squash</span>
+      </div>
+      <div class="social-card">
+        <img src="media/MichaelP2.jpeg" alt="Michael Peldzsus">
+        <span class="social-label">Matchday</span>
+      </div>
+      <div class="social-card">
+        <img src="media/SquashGermany.jpeg" alt="Squash Germany">
+        <span class="social-label">Community</span>
+      </div>
     </div>
   </div>
 </section>
